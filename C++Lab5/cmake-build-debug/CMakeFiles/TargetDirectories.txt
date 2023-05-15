@@ -1,0 +1,3 @@
+/Users/rafael/CLionProjects/С++Lab5/cmake-build-debug/CMakeFiles/__Lab5.dir
+/Users/rafael/CLionProjects/С++Lab5/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/rafael/CLionProjects/С++Lab5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
