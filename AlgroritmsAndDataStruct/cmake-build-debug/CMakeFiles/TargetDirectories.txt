@@ -1,6 +1,0 @@
-/Users/rafael/CLionProjects/AlgroritmsAndDataStruct/cmake-build-debug/CMakeFiles/AlgroritmsAndDataStruct.dir
-/Users/rafael/CLionProjects/AlgroritmsAndDataStruct/cmake-build-debug/CMakeFiles/LeetCode.dir
-/Users/rafael/CLionProjects/AlgroritmsAndDataStruct/cmake-build-debug/CMakeFiles/Prim.dir
-/Users/rafael/CLionProjects/AlgroritmsAndDataStruct/cmake-build-debug/CMakeFiles/FordFalkerson.dir
-/Users/rafael/CLionProjects/AlgroritmsAndDataStruct/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/rafael/CLionProjects/AlgroritmsAndDataStruct/cmake-build-debug/CMakeFiles/rebuild_cache.dir
