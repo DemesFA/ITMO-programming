@@ -52,6 +52,12 @@ build CMakeFiles/C__Lab6.dir/main.cpp.o: CXX_COMPILER__C__Lab6_Debug /Users/rafa
   OBJECT_DIR = CMakeFiles/C__Lab6.dir
   OBJECT_FILE_DIR = CMakeFiles/C__Lab6.dir
 
+build CMakeFiles/C__Lab6.dir/Functions.cpp.o: CXX_COMPILER__C__Lab6_Debug /Users/rafael/CLionProjects/C++Lab6/Functions.cpp || cmake_object_order_depends_target_C__Lab6
+  DEP_FILE = CMakeFiles/C__Lab6.dir/Functions.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.0 -std=gnu++20
+  OBJECT_DIR = CMakeFiles/C__Lab6.dir
+  OBJECT_FILE_DIR = CMakeFiles/C__Lab6.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target C__Lab6
@@ -60,7 +66,7 @@ build CMakeFiles/C__Lab6.dir/main.cpp.o: CXX_COMPILER__C__Lab6_Debug /Users/rafa
 #############################################
 # Link the executable C__Lab6
 
-build C__Lab6: CXX_EXECUTABLE_LINKER__C__Lab6_Debug CMakeFiles/C__Lab6.dir/main.cpp.o
+build C__Lab6: CXX_EXECUTABLE_LINKER__C__Lab6_Debug CMakeFiles/C__Lab6.dir/main.cpp.o CMakeFiles/C__Lab6.dir/Functions.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.0
   OBJECT_DIR = CMakeFiles/C__Lab6.dir
   POST_BUILD = :
