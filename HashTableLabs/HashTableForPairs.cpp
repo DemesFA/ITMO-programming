@@ -1,59 +1,63 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <optional>
+#include <functional>
+
 
 class HashTable {
 private:
-    std::vector<std::list<int>> table;
+    std::vector<std::list<std::pair<int,int>>> Htable;
     int size;
 
 public:
-    HashTable(int s) : size(s) {
-        table.resize(size);
+    HashTable(int size) {
+        this->size = size;
+        Htable.resize(size);
     }
 
-    void insert(int value) {
-        int index = hash(value);
-        table[index].push_back(value);
+    int hashFunction(int key) {
+        if(key < 0) return size - std::abs(key);
+        return key % size;
     }
 
-    int countPairs() {
-        int count = 0;
-        for (const auto& chain : table) {
-            std::vector<int> countMap(size, 0);
-            for (auto it1 = chain.begin(); it1 != chain.end(); ++it1) {
-                int target = *it1 - std::distance(table[0].begin(), it1);
-                if (target >= 0 && target < size) {
-                    count += countMap[target];
-                }
-                countMap[*it1]++;
+    void insert(int key) {
+        int index = hashFunction(key);
+        Htable[index].emplace_back(key, 0);
+    }
+
+    std::optional<std::reference_wrapper<int>> search(int key) {
+        int index = hashFunction(key);
+        for (auto& element : Htable[index]) {
+            if (element.first == key) {
+                return element.second;
             }
         }
-        return count;
+
+        return std::nullopt;
     }
 
-
-
-private:
-    int hash(int value) {
-        return value % size;
+    int& operator[](int key) {
+        auto found{ search(key) };
+        if(!found) insert(key);
+        return *search(key);
     }
+
 };
+
 
 int main() {
     int N;
     std::cin >> N;
 
-    HashTable hashTable(N);
-
+    int countPairs = 0;
+    HashTable hashTable(1000000);
     for (int i = 0; i < N; i++) {
-        int height;
-        std::cin >> height;
-        hashTable.insert(height);
+        int number{};
+        std::cin >> number;
+        countPairs += hashTable[number - i]++;
     }
 
-    int pairs = hashTable.countPairs();
-    std::cout << pairs << std::endl;
-
+    std::cout << countPairs << '\n';
     return 0;
 }
