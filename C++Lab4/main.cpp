@@ -5,10 +5,8 @@
 
 int main() {
     Circle circle;
-    circle.initFromDialog();
     circle.draw();
     Rectangle rectangle;
-    rectangle.initFromDialog();
     rectangle.draw();
 
 }

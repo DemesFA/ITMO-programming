@@ -52,6 +52,8 @@ void Rectangle::draw() {
     std::cout << "Rectangle center coordinates is:" << center.dx << " " << center.dy << std::endl;
     std::cout << "Rectangle weight is:" << weight << std::endl;
     std::cout << "Rectangle size is:" << Rectangle::size() << std::endl;
+    std::cout << "Rectangle perimeter is: " << Rectangle::perimeter() << std::endl;
+    std::cout << "Rectangle square is: " << Rectangle::square() << std::endl;
 }
 
 unsigned int Rectangle::size() {

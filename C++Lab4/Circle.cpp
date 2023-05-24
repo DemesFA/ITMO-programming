@@ -49,6 +49,8 @@ void Circle::draw() {
     std::cout << "Circle center coordinates is:" << center.dx << " " << center.dy << std::endl;
     std::cout << "Circle weight is:" << weight << std::endl;
     std::cout << "Circle size is:" << Circle::size() << std::endl;
+    std::cout << "Circle square is: " << Circle::square() << std::endl;
+    std::cout << "Circle perimeter is: " << Circle::perimeter() << std::endl;
 }
 
 unsigned int Circle::size() {
