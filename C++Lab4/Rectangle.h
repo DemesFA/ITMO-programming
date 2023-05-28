@@ -1,11 +1,7 @@
-#include "IGeoFig.h"
-#include "CVector2D.h"
-#include "IPhysObject.h"
-#include "IPrintable.h"
-#include "Dialog.h"
-#include "BaseObject.h"
+#ifndef Rectangle_h
+#include "Figure.h"
 
-class Rectangle : public GeoFig, public Printable, public PhysObject, public Dialog, public BaseObject, public CVector2D{
+class Rectangle : public Figure{
 
     double width;
     double height;
@@ -25,3 +21,5 @@ public:
     bool operator<(PhysObject& PhObj) override;
     const char * classname() override;
 };
+
+#endif
