@@ -28,6 +28,7 @@ void Buffer<T>::push_front(const T &value) {
     if(size_ == capacity_){
         expandCapacity();
     }
+    shiftRight(start_);
     buffer[start_] = value;
     size_++;
 }

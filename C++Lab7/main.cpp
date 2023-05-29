@@ -25,6 +25,7 @@ int main(){
     std::cout << std::endl;
 
     buffer.pop_front();
+    buffer.pop_back();
     buffer.erase(3);
     int sizeResult = buffer.size();
     std::sort(buffer.begin(),buffer.end());
@@ -32,5 +33,7 @@ int main(){
     for(auto sorted : buffer){
         std::cout << sorted << " ";
     }
-    
+    std::cout << std::endl;
+
+    std::cout << "Buffer size is: " << sizeResult << std::endl;
 }
