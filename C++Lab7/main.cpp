@@ -1,30 +1,36 @@
+#include "Buffer.hpp"
+#include "Buffer.tpp"
 #include <iostream>
-#include "Buffer.h"
+#include <algorithm>
 
-int main() {
-    // Создаем буфер и добавляем элементы
-    Buffer<int> buffer(5);
-    buffer.push_back(5);
+
+
+
+int main(){
+    Buffer<int> buffer(10);
+    buffer.push_back(2);
     buffer.push_back(3);
-    buffer.push_front(9);
-    buffer.insert(2, 1);
+    buffer.push_back(5);
+    buffer.push_front(4);
+    buffer.insert(8,1);
+    buffer.push_back(19);
+    buffer.push_back(13);
 
-    // Выводим элементы буфера
-    std::cout << "Buffer elements: ";
-    for (std::size_t i = 0; i < buffer.size(); ++i) {
-        std::cout << buffer[i] << " ";
+
+
+
+    for(auto result : buffer) {
+        std::cout << result << " ";
     }
     std::cout << std::endl;
 
-    // Сортируем элементы буфера
-    buffer.sort();
+    buffer.pop_front();
+    buffer.erase(3);
+    int sizeResult = buffer.size();
+    std::sort(buffer.begin(),buffer.end());
 
-    // Выводим отсортированные элементы буфера
-    std::cout << "Sorted buffer elements: ";
-    for (std::size_t i = 0; i < buffer.size(); ++i) {
-        std::cout << buffer[i] << " ";
+    for(auto sorted : buffer){
+        std::cout << sorted << " ";
     }
-    std::cout << std::endl;
-
-    return 0;
+    
 }
