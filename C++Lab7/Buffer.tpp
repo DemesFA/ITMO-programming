@@ -40,7 +40,7 @@ typename std::iterator<std::random_access_iterator_tag, T>::pointer Buffer<T>::b
 
 template<typename T>
 typename std::iterator<std::random_access_iterator_tag, T>::pointer Buffer<T>::end() {
-    return (buffer + size_);
+    return (buffer+ size_);
 }
 
 template<typename T>

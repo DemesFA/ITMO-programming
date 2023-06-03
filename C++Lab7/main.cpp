@@ -17,12 +17,10 @@ int main(){
     buffer.push_back(13);
 
 
-
-
-    for(auto result : buffer) {
-        std::cout << result << " ";
-    }
-    std::cout << std::endl;
+   for(auto it = buffer.begin(); it != buffer.end(); it++){
+       std::cout << *it << " ";
+   }
+   std::cout << std::endl;
 
     buffer.pop_front();
     buffer.pop_back();
@@ -36,4 +34,6 @@ int main(){
     std::cout << std::endl;
 
     std::cout << "Buffer size is: " << sizeResult << std::endl;
+
+    std::cout << buffer[3] + buffer[2];
 }
