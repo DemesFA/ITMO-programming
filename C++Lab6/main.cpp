@@ -15,14 +15,17 @@ bool Functions::none_of(Iterator begin, Iterator end, Predicate predicate) {
 }
 
 
-template<typename Iterator,typename Compare>
+template<typename Iterator, typename Compare>
 bool Functions::is_sorted(Iterator begin, Iterator end, Compare compare) {
+    if (begin == end)
+        return true;
 
     Iterator prev = begin;
-    Iterator current = begin++;
+    Iterator current = begin;
+    ++current;
 
-    while (current != end){
-        if(compare(*current, *prev)) {
+    while (current != end) {
+        if (compare(*current, *prev)) {
             return false;
         }
         ++prev;
@@ -30,6 +33,7 @@ bool Functions::is_sorted(Iterator begin, Iterator end, Compare compare) {
     }
     return true;
 }
+
 
 template<typename Iterator,typename T>
 Iterator Functions::find_not(Iterator begin, Iterator end, T &value) {
@@ -42,6 +46,20 @@ Iterator Functions::find_not(Iterator begin, Iterator end, T &value) {
     return end;
 
 }
+template<typename T>
+bool is_negative(T num) {
+    return num < 0;
+}
+
+
+template<typename T>
+struct Less {
+    bool operator()(const T& a, const T& b) const {
+        return a < b;
+    }
+};
+
+
 
 
 int main() {
@@ -57,14 +75,11 @@ int main() {
 
     Functions functions;
 
-    int checkNumber;
-    std::cout << "Enter a checkNumber for none_of" << std::endl;
-    std::cin >> checkNumber;
 
-    bool noneOfResult = functions.none_of(vec.begin(),vec.end(), [checkNumber](int num) {return num > checkNumber; });
+    bool noneOfResult = functions.none_of(vec.begin(),vec.end(), is_negative<int>);
     std::cout << "none_of Result: " << (noneOfResult ? "true" : "false") << std::endl;
 
-    bool isSortedResult = functions.is_sorted(vec.begin(), vec.end(), std::less<int>());
+    bool isSortedResult = functions.is_sorted(vec.begin(), vec.end(), Less<int>());
     std::cout << "is_sorted Result: " << (isSortedResult ? "true" : "false") << std::endl;
 
     int number;
